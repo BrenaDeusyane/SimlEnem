@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "96962455531",
+    "project_id": "simlenem",
+    "storage_bucket": "simlenem.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:96962455531:android:e94372a7aa25be96c65bae",
+        "android_client_info": {
+          "package_name": "com.example.simulenem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "96962455531-l2eefv3ner7cort3e3mh6v0e2friprdk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.simulenem",
+            "certificate_hash": "4884c84b463dc132c397929002c544df664442d8"
+          }
+        },
+        {
+          "client_id": "96962455531-8eucf12rtli4ui7os336af8oumm49oif.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBA7Kwm6XoOaD6wfrzscENJZF_Oc7e8DAI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "96962455531-8eucf12rtli4ui7os336af8oumm49oif.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
