@@ -2,12 +2,11 @@ package com.example.simulenem;
 
 public class ProfileModel {
 
-    private String name, email, password;
+    private String name, email;
 
-    public ProfileModel(String name, String email, String password) {
+    public ProfileModel(String name, String email) {
         this.name = name;
         this.email = email;
-        this.password = password;
     }
 
     public String getName() {
@@ -26,7 +25,4 @@ public class ProfileModel {
         this.email = email;
     }
 
-    public String getPassword() { return password; }
-
-    public void setPassword(String password) { this.password = password; }
 }

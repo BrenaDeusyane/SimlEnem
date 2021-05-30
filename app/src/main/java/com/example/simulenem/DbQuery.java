@@ -32,7 +32,7 @@ public class DbQuery {
     public static List<CategoryModel> google_category_list = new ArrayList<>();
     public static List<TestModel> google_test_list = new ArrayList<>();
     public static int google_selected_category_index = 0;
-    public static ProfileModel my_profile = new ProfileModel("na", null, null);
+    public static ProfileModel my_profile = new ProfileModel("na", null);
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public static void createUserData(String email, String name, final MyCompleteListener complete_listener) {
@@ -70,7 +70,6 @@ public class DbQuery {
 
                         my_profile.setName(documentSnapshot.getString("name"));
                         my_profile.setEmail(documentSnapshot.getString("email_id"));
-                        my_profile.setPassword(documentSnapshot.getString("password"));
 
                         complete_listener.onSuccess();
 
