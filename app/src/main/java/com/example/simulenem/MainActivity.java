@@ -19,6 +19,7 @@ import com.google.android.material.navigation.NavigationView;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    private BottomNavigationView bottom_navigation_view;
     private FrameLayout main_frame;
     private TextView drawer_profile_name, drawer_profile_text;
 
@@ -27,15 +28,15 @@ public class MainActivity extends AppCompatActivity
 
                 switch (menuItem.getItemId()){
                     case R.id.nav_home:
-                        setFragment(new CategoryFragment());
+                        bottom_navigation_view.setSelectedItemId(R.id.nav_home);
                         return true;
 
                     case R.id.nav_leaderboard:
-                        setFragment(new LeaderBoardFragment());
+                        bottom_navigation_view.setSelectedItemId(R.id.nav_leaderboard);
                         return true;
 
                     case R.id.nav_account:
-                        setFragment(new AccountFragment());
+                        bottom_navigation_view.setSelectedItemId(R.id.nav_account);
                         return true;
                 }
                 return false;

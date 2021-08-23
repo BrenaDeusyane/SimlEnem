@@ -1,5 +1,6 @@
 package com.example.simulenem;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -56,7 +57,16 @@ public class TestAdapter extends RecyclerView.Adapter<TestAdapter.ViewHolder> {
 
             test_number.setText("Simulado Nº: " + String.valueOf(position + 1));
             top_score.setText(String.valueOf(progress) + " %");
+
             progress_bar.setProgress(progress);
+
+            itemView.setOnClickListener(view -> {
+
+                DbQuery.google_selected_test_index = position;
+
+                Intent intent = new Intent(itemView.getContext(), StartTestActivity.class);
+                itemView.getContext().startActivity(intent);
+            });
 
         }
     }

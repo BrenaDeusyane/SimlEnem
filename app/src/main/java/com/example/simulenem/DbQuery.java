@@ -2,8 +2,10 @@ package com.example.simulenem;
 
 import android.util.ArrayMap;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -26,12 +28,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class DbQuery {
+public class  DbQuery {
 
     public static FirebaseFirestore google_firestore;
     public static List<CategoryModel> google_category_list = new ArrayList<>();
-    public static List<TestModel> google_test_list = new ArrayList<>();
     public static int google_selected_category_index = 0;
+
+    public static List<TestModel> google_test_list = new ArrayList<>();
+    public static int google_selected_test_index = 0;
+
+    public static List<QuestionModel> google_question_list = new ArrayList<>();
+
     public static ProfileModel my_profile = new ProfileModel("na", null);
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
@@ -133,6 +140,37 @@ public class DbQuery {
 
                     }
                 });
+
+    }
+
+    public static void loadQuestions(final MyCompleteListener completeListener){
+
+        google_question_list.clear();
+        google_firestore.collection("testes")
+                .whereEqualTo("categoria", google_category_list.get(google_selected_category_index).getDocumentID())
+                .whereEqualTo("teste", google_test_list.get(google_selected_test_index).getTest_id())
+                .get()
+                .addOnSuccessListener(queryDocumentSnapshots -> {
+
+                    for(DocumentSnapshot doc : queryDocumentSnapshots){
+
+                        google_question_list.add(new QuestionModel(
+                                doc.getString("question"),
+                                doc.getString("a"),
+                                doc.getString("b"),
+                                doc.getString("c"),
+                                doc.getString("d"),
+                                doc.getString("e"),
+                                doc.getLong("resposta").intValue(),
+                                -1
+                        ));
+
+                    }
+
+                    completeListener.onSuccess();
+
+                })
+                .addOnFailureListener(e -> completeListener.onFailure());
 
     }
 

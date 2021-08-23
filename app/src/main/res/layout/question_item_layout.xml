@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_question"
+        android:layout_margin="8dp"
+        android:padding="8dp"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:textColor="@color/black"
+        android:text="1ª Questão"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:scrollbars="vertical"
+        android:background="@color/white"
+        android:inputType="textMultiLine"
+        android:elevation="5dp"
+        android:translationZ="3dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/option_a"
+        android:layout_margin="8dp"
+        android:textColor="@color/black"
+        android:text="Opção a"
+        android:textSize="16sp"
+        android:background="@drawable/unselected_button"
+        android:elevation="3dp"
+        android:translationZ="3dp"
+        android:stateListAnimator="@null"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/option_b"
+        android:layout_margin="8dp"
+        android:textColor="@color/black"
+        android:text="Opção b"
+        android:textSize="16sp"
+        android:background="@drawable/unselected_button"
+        android:elevation="3dp"
+        android:translationZ="3dp"
+        android:stateListAnimator="@null"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/option_c"
+        android:layout_margin="8dp"
+        android:textColor="@color/black"
+        android:text="Opção c"
+        android:textSize="16sp"
+        android:background="@drawable/unselected_button"
+        android:elevation="3dp"
+        android:translationZ="3dp"
+        android:stateListAnimator="@null"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/option_d"
+        android:layout_margin="8dp"
+        android:textColor="@color/black"
+        android:text="Opção d"
+        android:textSize="16sp"
+        android:background="@drawable/unselected_button"
+        android:elevation="3dp"
+        android:translationZ="3dp"
+        android:stateListAnimator="@null"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/option_e"
+        android:layout_margin="8dp"
+        android:textColor="@color/black"
+        android:text="Opção e"
+        android:textSize="16sp"
+        android:background="@drawable/unselected_button"
+        android:elevation="3dp"
+        android:translationZ="3dp"
+        android:stateListAnimator="@null"/>
+
+</LinearLayout>
