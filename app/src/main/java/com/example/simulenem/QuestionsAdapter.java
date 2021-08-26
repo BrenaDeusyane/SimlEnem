@@ -1,5 +1,10 @@
 package com.example.simulenem;
 
+import static com.example.simulenem.DbQuery.ANSWERED;
+import static com.example.simulenem.DbQuery.REVIEW;
+import static com.example.simulenem.DbQuery.UNANSWERED;
+import static com.example.simulenem.DbQuery.google_question_list;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -111,6 +116,7 @@ public class QuestionsAdapter extends RecyclerView.Adapter<QuestionsAdapter.View
                 button.setBackgroundResource(R.drawable.selected_button);
                 DbQuery.google_question_list.get(questionID).setSelected_ans(option_num);
 
+                changeStatus(questionID, ANSWERED);
                 prev_selected_button = button;
             }
             else {
@@ -119,6 +125,7 @@ public class QuestionsAdapter extends RecyclerView.Adapter<QuestionsAdapter.View
                     button.setBackgroundResource(R.drawable.unselected_button);
                     DbQuery.google_question_list.get(questionID).setSelected_ans(-1);
 
+                    changeStatus(questionID, UNANSWERED);
                     prev_selected_button = null;
                 }
                 else {
@@ -127,11 +134,18 @@ public class QuestionsAdapter extends RecyclerView.Adapter<QuestionsAdapter.View
 
                     DbQuery.google_question_list.get(questionID).setSelected_ans(option_num);
 
+                    changeStatus(questionID, ANSWERED);
                     prev_selected_button = button;
                 }
 
             }
 
+        }
+
+        private void changeStatus(int id, int status){
+            if ( google_question_list.get(id).getStatus() != REVIEW ){
+                google_question_list.get(id).setStatus(status);
+            }
         }
 
         private void setOption(Button button, int option_num, int questionID){

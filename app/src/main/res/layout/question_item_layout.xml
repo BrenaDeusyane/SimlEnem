@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:id="@+id/tv_question"
         android:layout_margin="8dp"
         android:padding="8dp"
@@ -20,7 +21,8 @@
         android:background="@color/white"
         android:inputType="textMultiLine"
         android:elevation="5dp"
-        android:translationZ="3dp"/>
+        android:translationZ="3dp"
+        tools:ignore="TextViewEdits" />
 
     <Button
         android:layout_width="match_parent"
@@ -31,6 +33,7 @@
         android:text="Opção a"
         android:textSize="16sp"
         android:background="@drawable/unselected_button"
+        android:inputType="textMultiLine"
         android:elevation="3dp"
         android:translationZ="3dp"
         android:stateListAnimator="@null"/>
@@ -72,7 +75,8 @@
         android:background="@drawable/unselected_button"
         android:elevation="3dp"
         android:translationZ="3dp"
-        android:stateListAnimator="@null"/>
+        android:stateListAnimator="@null"
+        android:inputType="textMultiLine"/>
 
     <Button
         android:layout_width="match_parent"
